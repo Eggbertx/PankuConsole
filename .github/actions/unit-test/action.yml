@@ -17,7 +17,7 @@ runs:
         GODOT_BIN: "/home/runner/godot-linux/godot"
       shell: bash
       run: |
-        xvfb-run --auto-servernum $GODOT_BIN --headless --path . -s -d ./addons/gut/gut_cmdln.gd -gexit --audio-driver Dummy --screen 0 --continue --verbose
+        $GODOT_BIN --headless --path . -s -d ./addons/gut/gut_cmdln.gd -gexit
 
 
 # not tested yet
