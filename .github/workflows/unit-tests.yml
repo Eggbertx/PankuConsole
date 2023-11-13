@@ -70,15 +70,7 @@ jobs:
         uses: ./.github/actions/unit-test
         with:
           godot-bin: '~/godot-linux/godot'
-          test-includes: "res://addons/gdUnit4/test/"
-
-      - name: "Run Unit Test Examples"
-        if: ${{ !cancelled() }}
-        timeout-minutes: 4
-        uses: ./.github/actions/unit-test
-        with:
-          godot-bin: ${{ env.GODOT_BIN }}
-          test-includes: "res://gdUnit4-examples"
+          test-includes: "res://test/"
 
       - name: "Set Report Name"
         if: ${{ always() }}
