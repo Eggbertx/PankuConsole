@@ -13,9 +13,11 @@ on:
       godot-version:
         required: true
         type: string
+        default: '4.2'
       godot-status:
         required: true
         type: string
+        default: 'stable'
 
   workflow_dispatch:
     inputs:
