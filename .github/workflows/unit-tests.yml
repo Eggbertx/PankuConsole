@@ -28,9 +28,11 @@ on:
       godot-version:
         required: true
         type: string
+        default: '4.2'
       godot-status:
         required: true
         type: string
+        default: 'stable'
 
 concurrency:
   group: unit-tests-${{ github.head_ref || github.ref_name }}-${{ inputs.godot-version }}
