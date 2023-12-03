@@ -22,9 +22,9 @@ func before():
 	auto_free(_console_runner)
 	auto_free(_console_ui_runner)
 
-# func after():
-# 	if shell._is_gui_open:
-# 		_console_runner.simulate_key_pressed(KEY_QUOTELEFT)
+func after():
+	if shell._is_gui_open:
+		_console_runner.simulate_key_pressed(KEY_QUOTELEFT)
 
 func test_native_logger():
 	assert_object(console).is_not_null()
