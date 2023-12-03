@@ -1,6 +1,8 @@
 ![logo](./docs/assets/logo.png)
 
+[![unit-tests](https://camo.githubusercontent.com/c876d454cc2b987ccb23edc9ed7fd3b6d0e8e1e846dad9178f6446da346b3457/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f74657374732d322532307061737365642d73756363657373)](https://github.com/Eggbertx/PankuConsole/runs/19267451927)
 ---
+
 
 **Panku Console is a feature-packed real-time debugging toolkit for Godot Engine.** With Panku Console, you can easily interact with your scripts and objects at runtime, whether to cheat, debug, prototype, or just to have fun 😄🎮.
 
