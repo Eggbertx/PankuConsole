@@ -6,6 +6,7 @@ extends GdUnitTestSuite
 const _console_scene = "res://addons/panku_console/console.tscn"
 const _shell_module_name = "interactive_shell"
 const _logger_module_name = "native_logger"
+const _overlay_show_opt = PankuModuleNativeLogger.ScreenOverlayDisplayMode.AlwaysShow
 
 var console:PankuConsole
 var _console_runner: GdUnitSceneRunner
@@ -21,6 +22,11 @@ func before():
 	_console_ui_runner = scene_runner("res://addons/panku_console/modules/interactive_shell/console_ui/panku_console_ui.tscn")
 	auto_free(_console_runner)
 	auto_free(_console_ui_runner)
+	PankuConfig.set_config({
+		"native_logger": {
+			"screen_overlay": _overlay_show_opt
+		}
+	})
 
 func after():
 	if shell._is_gui_open:
@@ -31,6 +37,7 @@ func test_native_logger():
 	assert_object(shell).is_not_null()
 	assert_object(logger).is_not_null()
 	assert_object(logger.native_logs_monitor).is_not_null()
+	assert_int(logger.output_overlay_display_mode).is_equal(_overlay_show_opt)
 	_console_runner.simulate_key_press(KEY_QUOTELEFT)
 	assert_bool(shell._is_gui_open).is_true()
 

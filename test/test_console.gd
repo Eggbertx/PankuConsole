@@ -4,7 +4,7 @@ extends GdUnitTestSuite
 @warning_ignore('return_value_discarded')
 
 const _console_scene = "res://addons/panku_console/console.tscn"
-const _shell_signal = "toggle_console_action_just_presseds"
+const _shell_signal = "toggle_console_action_just_pressed"
 const _shell_module_name = "interactive_shell"
 
 var shell: PankuModuleInteractiveShell
@@ -24,7 +24,8 @@ func after():
 	
 func test_shell_toggle() -> void:
 	assert_object(shell).is_not_null()
-	
+	assert_signal(console).is_emitted(_shell_signal)
+
 	# simulate ~ and check that the signal was fired and the
 	# shell is open
 	_console_runner.simulate_key_pressed(KEY_QUOTELEFT)
